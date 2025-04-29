@@ -2,10 +2,12 @@
 
 피부병변 영상 분할의 성능향상을 위한 VmCUnet [논문](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12057471)의 코드 저장소입니다. 
 
-
 ## Abstract
 
 본 논문에서는 피부병변 영상에서 이미지 분할 성능을 향상시키기 위해 설계된 딥러닝 모델인 VmCUnet을 제안한다. VmCUnet은 Vm-UnetV2와 CIM(Cross-Scale Interaction Module)을 결합하여 인코더의 각 계층에서 추출한 특징들을 CIM으로 통합하여다양한 패턴과 경계를 정확하게 인식할 수 있다. VmCUnet은 ISIC-2017와 ISIC-2018 데이터 세트를 사용하여 피부 병변의 이미지 분할을 수행하였고 Unet, TransUnet, SwinUnet Vm-Unet, Vm-UnetV2와 비교하여 성능 지표인 IoU, Dice Score에서 더높은 성능을 보였다. 향후 작업에서는 다양한 의료 영상 데이터 세트에 대한 추가 실험을 수행하여 VmCUnet 모델의 일반화 성능을 검증할 예정이다
+
+## Model Structure
+![image](https://github.com/user-attachments/assets/6b5dfeaf-5652-49cb-a4dc-c323dab70b0f)
 
 ## Main Environments
 
