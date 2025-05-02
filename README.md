@@ -6,9 +6,6 @@
 
 본 논문에서는 피부병변 영상에서 이미지 분할 성능을 향상시키기 위해 설계된 딥러닝 모델인 VmCUnet을 제안한다. VmCUnet은 Vm-UnetV2와 CIM(Cross-Scale Interaction Module)을 결합하여 인코더의 각 계층에서 추출한 특징들을 CIM으로 통합하여다양한 패턴과 경계를 정확하게 인식할 수 있다. VmCUnet은 ISIC-2017와 ISIC-2018 데이터 세트를 사용하여 피부 병변의 이미지 분할을 수행하였고 Unet, TransUnet, SwinUnet Vm-Unet, Vm-UnetV2와 비교하여 성능 지표인 IoU, Dice Score에서 더높은 성능을 보였다. 향후 작업에서는 다양한 의료 영상 데이터 세트에 대한 추가 실험을 수행하여 VmCUnet 모델의 일반화 성능을 검증할 예정이다
 
-## Model Structure
-![image](https://github.com/user-attachments/assets/6b5dfeaf-5652-49cb-a4dc-c323dab70b0f)
-
 ## Main Environments
 
 ```
@@ -27,6 +24,8 @@ pip install mamba_ssm==1.0.1  # mmamba_ssm-1.0.1+cu118torch1.13cxx11abiFALSE-cp3
 ## Prepare the dataset
 
 ### datasets
+![image](https://github.com/user-attachments/assets/4f997a5d-c3bd-4055-ade4-1a51be8de935)
+
 
 - The ISIC2017 and ISIC2018 datasets 다운로드 후에 dataset_processing에 있는 코드 실행하면 train, valid, test 생성
 - ./data/isic2017/
@@ -56,6 +55,10 @@ pip install mamba_ssm==1.0.1  # mmamba_ssm-1.0.1+cu118torch1.13cxx11abiFALSE-cp3
 - 사전 학습된 Vmamba의 가중치는 [here](https://github.com/MzeroMiko/VMamba) 다운로드 가능
 - 다운로드 후에는 사전 학습된 가중치를 nets/pre_trained_weights/에 저장
 
+## Model Structure
+![image](https://github.com/user-attachments/assets/6b5dfeaf-5652-49cb-a4dc-c323dab70b0f)
+
+
 ## **Train the Model**
 
 먼저, Config.py에서 모델, 데이터셋 경로, 하이퍼파라미터를 수정 후 training 코드 실행
@@ -71,3 +74,7 @@ python experiments/train_model.py
 ```
 python experiments/test_model.py
 ```
+
+# Result
+![image](https://github.com/user-attachments/assets/d2a1c7e7-b540-4b09-a028-1004e6f8b65a)
+
